@@ -1,3 +1,5 @@
+package bai1;
+
 public class UltimateNumber {
     public static void main(String[] args) {
         int [] arr1 = {50,40,30,20,10};

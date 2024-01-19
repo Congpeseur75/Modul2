@@ -1,3 +1,5 @@
+package bai1;
+
 import java.util.Scanner;
 public class Untitel {
     public static void main(String[] args) {

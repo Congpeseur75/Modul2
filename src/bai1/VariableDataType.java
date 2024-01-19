@@ -1,3 +1,5 @@
+package bai1;
+
 public class VariableDataType {
     public static void main(String[] args){
         int i = 10;
