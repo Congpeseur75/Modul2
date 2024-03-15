@@ -1,12 +1,12 @@
 package FPTJAVA;
+
+import java.util.Random;
 import java.util.Scanner;
 
-import java.util.Scanner;
-
-public class variablesOperators {
+public class VariablesOperators2 {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        while (true){
+        while (true) {
             System.out.println("chọn bài");
             System.out.println("1. bai1");
             System.out.println("2. bai2");
@@ -21,157 +21,140 @@ public class variablesOperators {
             System.out.println("11. bai11");
             System.out.println("12. bai12");
             System.out.println("13. bai13");
-            System.out.println("14. bai14");
-            System.out.println("0. enter close");
             int choice = scanner.nextInt();
             if (choice == 1){
-                displayNumber();
+                calculationNumber();
             }
             else if (choice == 2){
-                displayName();
+                numberOneForSix();
             }
-            else if(choice == 3){
-                equationDegreeFirst();
+            else if (choice == 3){
+                calculationDecimal();
             }
             else if (choice == 4){
-                valuesVariables();
+                equationLevelTwo();
             }
             else if (choice == 5){
-                convertNumber();
+                AreaPerimeterCircle();
             }
             else if (choice == 6){
-                valuesA();
+                Values();
             }
             else if (choice == 7){
-                valuesB();
+                resultCalculation();
             }
             else if (choice == 8){
-                valuesC();
-            }
-            else if (choice == 9){
-                valuesD();
-            }
-            else if(choice == 10){
                 pressStyle();
             }
-            else if (choice == 11){
-                noPressStyle();
+            else if (choice == 9){
+                pressStyle1();
             }
-            else if (choice == 12){
+            else if (choice == 10){
+                pressStyle2();
+            }
+            else if (choice == 11){
                 pressStyleChange();
             }
-            else if (choice == 13){
-                distinguishTowPressStlyle();
+            else if (choice == 12){
+                distinguishTowPressStyle();
             }
-            else if (choice == 14){
+            else if (choice == 13){
                 useFLDAfterNumber();
             }
-            else if (choice == 0){
-                System.out.println("kết thúc chương trình");
-            }
-            System.out.println("kết thúc");
         }
     }
-    public static void displayNumber(){
-        //Viết chương trình Java để khai báo hai biến số nguyên, một biến float và một biến chuỗi và gán lần lượt 10, 12.5 và "Lập trình Java" cho chúng. Sau đó, hiển thị các giá trị của chúng trên màn hình
-        int a = 10;
-        float b = 12.5f;
-        System.out.println("số nguyên là: " + a + "số thực là: " + b);
-    }
-    public static void displayName(){
-        //Viết chương trình Java bằng cách sử dụng lớp Scanner để nhập tên , họ từ bàn phìm và sau đó  sẽ được hiển thị lên console
-        String name = scanner.nextLine();
-        System.out.println(name);
-    }
-    public static void  equationDegreeFirst(){
-        //Giải phương trình bậc 1
+    public static void calculationNumber(){
         int a = scanner.nextInt();
         int b = scanner.nextInt();
-        if (a == 0) {
-            if (b == 0) {
-                System.out.println("Phương trình có vô số nghiệm.");
-            } else {
-                System.out.println("Phương trình vô nghiệm.");
-            }
-        } else {
-            double x = (double) -b / a;
-            System.out.println("Nghiệm của phương trình là: " + x);
+        System.out.println(a + b);
+        System.out.println(a - b);
+        System.out.println(a * b);
+        if (a == 0 || b == 0){
+            System.out.println("không chia hết đc cho 0");
         }
-        scanner.close();
+        else {
+            System.out.println(a/b);
+        }
     }
-    public static void valuesVariables(){
-        //Tính giá trị của biến:
-        //                     boolean a = true&&false;
-        //                     boolean b = (3 > 100) || (25%5 == 0)
-        //                     boolean c = a && b;
-        //                     boolean d = !a || b;
-        boolean a = false;  // a = false
-        boolean b = true;  // b = false || true = true
-        boolean c = false;  // c = false && true = false
-        boolean d = true;  // d = !false || true = true
+    public static void numberOneForSix(){
+        Random random = new Random();
+        int randomNumber = random.nextInt(6)+ 1;
+        System.out.println(randomNumber);
+    }
+    public static void calculationDecimal(){
+        float a = scanner.nextFloat();
+        float b = scanner.nextFloat();
+        float sum = a + b;
+        System.out.println(sum);
+    }
+    public static void equationLevelTwo(){
+        System.out.println("Nhập hệ số a:");
+        double a = scanner.nextDouble();
+        System.out.println("Nhập hệ số b:");
+        double b = scanner.nextDouble();
+        System.out.println("Nhập hệ số c:");
+        double c = scanner.nextDouble();
 
-        System.out.println("Giá trị của a là: " + a);
-        System.out.println("Giá trị của b là: " + b);
-        System.out.println("Giá trị của c là: " + c);
-        System.out.println("Giá trị của d là: " + d);
+        // Giải phương trình bậc 2
+        double delta = b * b - 4 * a * c;
+        if (delta > 0) {
+            double x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            double x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            System.out.println("Phương trình có hai nghiệm phân biệt:");
+            System.out.println("x1 = " + x1);
+            System.out.println("x2 = " + x2);
+        } else if (delta == 0) {
+            double x = -b / (2 * a);
+            System.out.println("Phương trình có nghiệm kép:");
+            System.out.println("x = " + x);
+        } else {
+            System.out.println("Phương trình vô nghiệm.");
+        }
     }
-    public static void convertNumber(){
-        //Nhập vào 2 số nguyên, lưu vào 2 biến a và b. Sau đó, đảo giá trị của 2 biến này rồi xuất giá trị của chúng ra màn hình console.
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int temp = a;
-            a = b;
-            b = temp;
-        System.out.println("giá trị của a là: " + a + "giá trị của b là: " + b);
+    public static void AreaPerimeterCircle(){
+        double radius = scanner.nextDouble();
+        double Area = radius * radius * Math.PI;
+        double Perimeter = 2 * radius * Math.PI;
+        System.out.println("diện tích hình tròn là: " + Perimeter + "Chu vi hình tròn là: " + Area);
     }
-    public static void valuesA(){
-        //Tính giá trị của a:
-        //int i = 1; j = 1;
-        //a = i++ + j++;
+    public static void Values(){
         int i = 1, j = 1;
-        int a = (i++) + (j++);
-        System.out.println(a);
+        int a = i++ + j++ + i++ + j++;
+        int b = ++i + ++j + i++ + j++;
+        int c =  i++ + ++i - i-- - --i;
+        System.out.println("giá trị của a là: " + a + "giá trị cua b là: " + b + "giá trị của c là: " + c);
     }
-    public static void valuesB(){
-        //Assignment  7:
-        //Tính giá trị của a:
-        //int i = 1; j = 1;
-        //a = i++ + ++j;
-        int i = 1, j = 1;
-        int b = (i++) + (++j);
-        System.out.println(b);
-    }
-    public static void valuesC(){
-        //Tính giá trị của a:
-        //int i = 1; j = 1;
-        //a = ++i + j++;
-        int i = 1, j = 1;
-        int c= (++i) + (j++);
-        System.out.println(c);
-    }
-    public static void valuesD(){
-        //Tính giá trị của a:
-        //int i = 1; j = 1;
-        //a = ++i + ++j;
-        int i = 1, j = 1;
-        int d = (++i) + (++j);
-        System.out.println(d);
+    public static  void resultCalculation(){
+        //int i = 2;
+        //System.out.println(i++);
+        //System.out.println(++i);
+        int i = 2;
+        System.out.println("kết quả là: 3");
     }
     public static void pressStyle(){
         //Cho các ví dụ về ép kiểu mà độ chính xác không bị thay đổi, như thứ tự bên dưới:
         //byte->short->int->long->float->double"
         byte byteValue = 100;
         short shortValue = (short) byteValue;
-        int intValue = shortValue;
-        long longValue = intValue;
-        float floatValue = longValue;
-        double doubleValue = floatValue;
+        int intValue = (int) shortValue;
+        long longValue = (long) intValue;
+        float floatValue = (float) longValue;
+        double doubleValue = (double) floatValue;
         System.out.println(doubleValue);
     }
-    public static void noPressStyle(){
+    public static void pressStyle1(){
         //Cho các ví dụ về ép kiểu mà độ chính xác không bị thay đổi, như thứ tự bên dưới:
         //double -> float -> long -> int -> short -> byte
-        double doubleValue = 123;
+        double doubleValue = 3.14159;
+        float floatValue = (float) doubleValue;
+        long longValue = (long) floatValue;
+        int intValue = (int) longValue;
+        short shortValue = (short) intValue;
+        byte byteValue = (byte) shortValue;
+        System.out.println(byteValue);
+    }
+    public static void pressStyle2(){
+        double doubleValue = 3.14159;
         float floatValue = (float) doubleValue;
         long longValue = (long) floatValue;
         int intValue = (int) longValue;
@@ -190,7 +173,7 @@ public class variablesOperators {
         byte byteValue = (byte) shortValue;
         System.out.println(byteValue);
     }
-    public static void distinguishTowPressStlyle(){
+    public static void distinguishTowPressStyle(){
         //Phân biệt ép kiểu tường minh và ép kiểu ngầm định
         System.out.println("Ép kiêu tường mình(explicit casting) là: Đây là quá trình mà bạn thực hiện chủ định, khi bạn cung cấp mã để chuyển đổi giữa các kiểu dữ liệu. Trong ép kiểu tường minh, bạn cần sử dụng toán tử ép kiểu (type) expression");
         System.out.println("Ép kiểu ngầm định(implicit casting) là: Đây là quá trình mà trình biên dịch tự động thực hiện khi có thể chuyển đổi từ một kiểu dữ liệu sang kiểu dữ liệu khác mà không làm mất thông tin hoặc không gây ra lỗi. Ép kiểu ngầm định thường xảy ra khi chuyển từ kiểu dữ liệu có kích thước nhỏ hơn sang kiểu có kích thước lớn hơn.");

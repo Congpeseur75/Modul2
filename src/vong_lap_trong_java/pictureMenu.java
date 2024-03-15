@@ -55,7 +55,7 @@ public class pictureMenu {
         System.out.println("Top-left square triangle:");
         for (int i = 0; i < size; i++) {
             for (int j = 0; j <= i; j++) {
-                System.out.print("* ");
+                System.out.print("*");
             }
             System.out.println();
         }
