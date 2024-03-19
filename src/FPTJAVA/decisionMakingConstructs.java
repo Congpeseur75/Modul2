@@ -62,7 +62,7 @@ public class decisionMakingConstructs {
         int midtermScore = scanner.nextInt();
         int testMarks = scanner.nextInt();
         int finalGrade = scanner.nextInt();
-        int avg = (midtermScore + testMarks + finalGrade) / 3;
+        double avg = (double)(midtermScore + testMarks + finalGrade) / 3;
         if(avg >= 90){
             System.out.println(avg + "điểm của học sinh này là A");
         }
@@ -83,7 +83,7 @@ public class decisionMakingConstructs {
         int quantity = scanner.nextInt();
         int revenue = quantity * unitPrice;
         int discount;
-        int sumRevenue;
+        double sumRevenue;
         if (quantity > 120){
             discount = revenue / 100 * 15;
             sumRevenue = revenue -discount;
@@ -135,6 +135,40 @@ public class decisionMakingConstructs {
         }
         else {
             System.out.println("không được phép bấm");
+        }
+
+        switch (button){
+            case 1:
+                System.out.println("số bạn nhập từ bàn phím là 1");
+                break;
+            case 2:
+                System.out.println("số bạn nhập từ bàn phím là 2");
+                break;
+            case 3:
+                System.out.println("số bạn nhập từ bàn phím là 3");
+                break;
+            case 4:
+                System.out.println("số bạn nhập từ bàn phím là 4");
+                break;
+            case 5:
+                System.out.println("số bạn nhập từ bàn phím là 5");
+                break;
+            case 6:
+                System.out.println("số bạn nhập từ bàn phím là 6");
+                break;
+            case 7:
+                System.out.println("số bạn nhập từ bàn phím là 7");
+                break;
+            case 8:
+                System.out.println("số bạn nhập từ bàn phím là 8");
+                break;
+            case 9:
+                System.out.println("số bạn nhập từ bàn phím là 9");
+                break;
+            default:
+        }
+        if (button <= 9){
+            System.out.println("số bạn nhập từ bàn phím là: " + button);
         }
     }
     public static void chooseTheCorrectAnswer(){

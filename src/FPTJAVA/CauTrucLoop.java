@@ -70,7 +70,7 @@ public class CauTrucLoop {
         //123456*
         //1234567
         System.out.println("nhập một số nguyên bằng 7");
-        int size = 8;
+        int size = 7;
         for (int i = 1; i < size; i++){
             for (int j = 1; j <= i; j++) {
                 System.out.print(j);
@@ -94,8 +94,12 @@ public class CauTrucLoop {
         System.out.println("nhập một số nguyên ");
         int size = scanner.nextInt();
         for (int i = 1; i <= size; i++) {
-            System.out.print(i);
-            i++;
+            if(i / 2 != 0) {
+                System.out.print(i);
+            }
+            else {
+                System.out.println();
+            }
         }
     }
     public static void PrintSeries3(){
@@ -104,51 +108,64 @@ public class CauTrucLoop {
         int size = scanner.nextInt();
         int num = -2;
         for (int i = 2; i <= size; i++) {
-            if (i % 2 == 0){
-                num *= 2;
-                System.out.print("," + i + "," + num);
+            if (i % 2 == 0) {
+                System.out.print("," + i + ",");
+                System.out.print(num - i);
+                i = i + 3;
             }
             else {
-                break;
+                System.out.println();
             }
-           i = i + 3;
         }
     }
-    public static void PrintSeries4(){
+    public static void PrintSeries4() {
         //In dãy số 2, 4, -6, 8, 10, -12 … n (bằng ít nhất 2 cách khác nhau) (n là số nhập vào từ bàn phím)
         System.out.println("nhập một số nguyên ");
         int size = scanner.nextInt();
-        int num = -3;
-        for (int i = 2; i <= size; i++) {
-           if(i % 2 == 0) {
-               System.out.print("," + i);
-               i += 2;
-               System.out.print("," + i);
-           }
-           else {
-               num *= 2;
-               System.out.print("," + num);
-               i = i + 2;
-           }
+        int count = 1;
+         //cách 1
+        for (int i = 2; i <= size; i += 4) {
+            for (int j = 1; j <= count; j++) {
+                System.out.print(i + "  ");
+                i += 2;
+                System.out.print(i + "  ");
+            }
+            System.out.print(-i - 2 + " ");
         }
-
-        int flag = 1;
-        for (int i = 1; i <= size; i++) {
-            if (i % 2 == 0) {
-                System.out.print(", " + num);
-                num += 2;
-            } else {
-                System.out.print(", " + (flag * i * -1));
-                flag *= -1;
+        // cách 2
+        if (size % 2 == 0) {
+            int num = -2;
+            for (int i = 2; i <= size; i += 2) {
+                System.out.print(i + " ");
+                i += 2;
+                System.out.print(i + " ");
+                System.out.print(-i + num + " ");
+                i += 2;
+            }
+        }
+        else {
+           int number = -2;
+            for (int i = 1; i <= size; i += 2) {
+                System.out.print(i + " ");
+                i += 2;
+                System.out.print(i + " ");
+                System.out.print(-i + number + " ");
+                i += 2;
             }
         }
     }
+
     public static void PrintSeries5(){
         //In dãy số 2, 4, 6, 8, 10 … 2n (n là số nhập vào từ bàn phím) (*)
         System.out.print("Nhập số nguyên dương n: ");
         int n = scanner.nextInt();
-        for (int i = 1; i <= n; i++) {
-            System.out.print(2 * i + " ");
+        for (int i = 2; i <= n; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i);
+            }
+            else {
+                System.out.println();
+            }
         }
     }
 }
