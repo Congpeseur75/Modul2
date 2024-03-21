@@ -73,6 +73,7 @@ public class Array {
         }
     }
     public static void createArrayA(){
+        System.out.println("nhập số lương cho mang");
         int N = scanner.nextInt();
         int[] A = generateArray(N);
         int[] B = extractEvenNumbers(A);
