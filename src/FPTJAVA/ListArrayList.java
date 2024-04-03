@@ -48,7 +48,6 @@ public class ListArrayList {
         ArrayList<String> stringList = new ArrayList<>();
         System.out.println("nhập số lượng danh sách: ");
         int N = scanner.nextInt();
-        scanner.nextLine();
         for (int i = 0; i < N; i++) {
             System.out.println("giá trị của i là: " + (i + 1) + ": ");
             String value = scanner.nextLine();

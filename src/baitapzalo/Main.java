@@ -6,6 +6,7 @@ public class Main {
     static Product nyKhoa = new Product("Ngọc Vy",500.0,100);
     static Product[] products = {nyCong,nyKhoa};
     public static void main(String[] args) {
+
         while (true) {
             System.out.println("Quản lí sản phẩm");
             System.out.println("1. hiển thị");
@@ -93,7 +94,7 @@ public class Main {
         }
         System.out.println("Không tìm thấy sản phẩm có tên: " + name);
     }
-    public static void deleteProduct() {
+    public static void deleteProduct()  {
         System.out.println("Nhập tên sản phẩm cần xóa:");
         String name = scanner.next();
 
